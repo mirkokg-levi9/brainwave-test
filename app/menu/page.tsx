@@ -9,10 +9,9 @@ export default function MenuPage() {
       <div className="flex flex-col gap-4 mt-4">
         {menuItems.map((item) => (
           <Link key={item.id} href={`/menu/${item.id}`}>
-            {/* TODO(brAInwave): linked to issue #31 */}
             <Card className="cursor-pointer hover:shadow-md transition-shadow">
               <CardHeader>
-                <CardTitle className="text-sm font-medium text-zinc-900">
+                <CardTitle className="text-sm font-medium text-blue-600">
                   {item.name}
                 </CardTitle>
               </CardHeader>
