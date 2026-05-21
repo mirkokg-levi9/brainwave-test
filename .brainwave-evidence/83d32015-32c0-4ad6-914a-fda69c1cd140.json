@@ -1,0 +1,6 @@
+{
+  "route": "/smoke-test-a",
+  "url": "http://localhost:3000/smoke-test-a",
+  "screenshot_path": ".brainwave-evidence/83d32015-32c0-4ad6-914a-fda69c1cd140.png",
+  "captured_at": "2026-05-21T09:19:37.139Z"
+}
