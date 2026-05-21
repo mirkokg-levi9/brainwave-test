@@ -6,7 +6,7 @@ import {
   CardHeader,
   CardTitle,
 } from "@/components/ui/card";
-import { getMenuItem } from "@/lib/menu";
+import { menuItems } from "@/lib/menu";
 
 export default async function MenuItemPage({
   params,
@@ -14,7 +14,7 @@ export default async function MenuItemPage({
   params: Promise<{ id: string }>;
 }) {
   const { id } = await params;
-  const item = getMenuItem(id);
+  const item = menuItems.find((i) => i.id === id);
 
   if (!item) {
     notFound();
@@ -32,7 +32,6 @@ export default async function MenuItemPage({
         </CardHeader>
         <CardContent className="flex flex-col gap-2 text-sm text-zinc-600">
           <p className="font-semibold text-zinc-900">{item.price}</p>
-          <p>{item.description}</p>
         </CardContent>
       </Card>
     </main>
