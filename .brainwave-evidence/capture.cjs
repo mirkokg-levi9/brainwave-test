@@ -14,13 +14,11 @@ const pngPath = path.join(__dirname, taskId + ".png");
 const jsonPath = path.join(__dirname, taskId + ".json");
 
 (async () => {
-  const browser = await chromium.launch(); // headless
+  const browser = await chromium.launch();
   try {
     const page = await browser.newPage({
       viewport: { width: 1280, height: 800 },
     });
-    // Wait for network idle, capped at 3s — a timeout here is fine,
-    // we screenshot whatever has rendered by then.
     await page
       .goto(url, { waitUntil: "networkidle", timeout: 3000 })
       .catch(() => {});
